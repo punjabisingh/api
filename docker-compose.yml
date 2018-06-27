@@ -1,0 +1,8 @@
+version: '3.4'
+
+services:
+  apitodocker:
+    image: apitodocker
+    build:
+      context: .
+      dockerfile: APIToDocker/Dockerfile
