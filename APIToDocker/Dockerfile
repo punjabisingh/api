@@ -1,5 +1,5 @@
-FROM microsoft/aspnetcore-build:2.0 AS build-env
-WORKDIR /app
+FROM microsoft/aspnetcore-build:2.0
+WORKDIR /app/src
 
 # Copy csproj and restore as distinct layers
 COPY *.csproj ./
@@ -9,8 +9,8 @@ RUN dotnet restore
 COPY . ./
 RUN dotnet publish -c Release -o out
 
-# Build runtime image
-FROM microsoft/aspnetcore:2.0
-WORKDIR /app
-COPY --from=build-env /app/out .
+WORKDIR /app/src/out
+
 ENTRYPOINT ["dotnet", "APIToDocker.dll"]
+
+RUN chmod -R a+wrXs /app
