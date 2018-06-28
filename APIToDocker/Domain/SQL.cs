@@ -12,9 +12,9 @@ namespace APIToDocker.Domain
         public SQL()
         {
             builder = new SqlConnectionStringBuilder();
-            builder.DataSource = "sql_server_demo,1433";
+            builder.DataSource = "10.8.1.194,1433";
             builder.UserID = "sa";
-            builder.Password = "P@ssw0rd";
+            builder.Password = "Pass1234";
             builder.InitialCatalog = "GovTech";
         }
 
