@@ -1,4 +1,3 @@
-
 FROM microsoft/aspnetcore-build:2.0
 WORKDIR /app/src
 
@@ -14,7 +13,13 @@ WORKDIR /app/src/out
 
 ENTRYPOINT ["dotnet", "APIToDocker.dll"]
 
-EXPOSE 3000
+EXPOSE 3100
 RUN chmod -R a+wrXs /app
 
-ENV ASPNETCORE_URLS=http://+:3000
+ENV ASPNETCORE_URLS=http://+:3100
+
+#ENV IAMATESTENV=TRUE
+
+ENV DB_HOST=mssql,1433
+ENV DB_USER=sa
+ENV DB_PASSWORD=P@ssw0rd

@@ -10,6 +10,9 @@ namespace APIToDocker.Controllers
     [Route("api/[controller]")]
     public class ValuesController : Controller
     {
+
+
+
         // GET api/values
         [HttpGet]
         public IEnumerable<ApexDTO> Get()
@@ -28,7 +31,7 @@ namespace APIToDocker.Controllers
         [HttpGet("{id}")]
         public string Get(int id)
         {
-            return id.ToString();
+            return "Hello from C# code value : " + id.ToString();
         }
 
         // POST api/values

@@ -6,19 +6,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <CustomCommands>
-      <CustomCommands>
-        <Command>
-          <type>AfterBuild</type>
-          <command>Install.sh</command>
-          <externalConsole>True</externalConsole>
-        </Command>
-      </CustomCommands>
-    </CustomCommands>
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="wwwroot\" />
     <Folder Include="Domain\" />
+    <Folder Include="Common\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -31,5 +23,6 @@
 
   <ItemGroup>
     <Compile Remove="Domain\APEX.cs" />
+    <Compile Remove="Common\UrlHelperExtensions.cs" />
   </ItemGroup>
 </Project>

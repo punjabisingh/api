@@ -14,10 +14,10 @@ namespace APIToDocker
     {
         public static void Main(string[] args)
         {
-            var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
+            //var config = new ConfigurationBuilder().AddEnvironmentVariables("").Build();
             // 2nd line added
 
-            var url = config["ASPNETCORE_URLS"] ?? "http://*:3000";
+           //var url = config["ASPNETCORE_URLS"] ?? "http://*:4000";
             // 3rd line added
 
             var host = new WebHostBuilder()
@@ -25,7 +25,7 @@ namespace APIToDocker
             .UseContentRoot(Directory.GetCurrentDirectory())
             .UseIISIntegration()
                 .UseStartup<Startup>()
-            .UseUrls(url) // 4th line added
+            //.UseUrls(url) // 4th line added
             .Build();
 
             host.Run();
